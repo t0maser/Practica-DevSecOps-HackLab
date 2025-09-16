@@ -1,0 +1,1 @@
+Imagen con malas prácticas: root, apt-get sin pins y sin limpieza.

@@ -1,0 +1,14 @@
+image:
+  repository: demo-app
+  tag: local
+service:
+  type: NodePort
+  port: 80
+  targetPort: 3000
+  nodePort: 30080
+resources: {}
+securityContext:
+  enabled: true
+  runAsNonRoot: true
+  allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
