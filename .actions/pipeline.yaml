@@ -1,0 +1,20 @@
+name: devsecops-pipeline
+on: [push, pull_request]
+
+jobs:
+  secrets:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gitleaks/gitleaks-action@v2
+
+  # sast:
+  #   runs-on: self-hosted
+  #   needs: [secrets]
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Semgrep
+  #       run: |
+  #         docker run --rm -v "$PWD:/src" returntocorp/semgrep:latest             semgrep scan --error --config p/ci --config .semgrep
+
+
